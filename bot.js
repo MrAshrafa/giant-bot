@@ -180,11 +180,10 @@ client.on('message', message => {
     }) //7md
     }  //7md
     }) //7md
-
-client.on('message', msg => {
-  if (msg.content === 'W') {
-    msg.reply('WELCOME TO GIANT SHOP:heart:');
-  }
+client.on('message', message => {
+if (message.content.startWith('W')) {
+message.channel.send('WELCOME TO GIANTSHOP:heart:'); 
+}
 });
 
 client.login(process.env.BOT_TOKEN)
