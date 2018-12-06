@@ -181,4 +181,10 @@ client.on('message', message => {
     }  //7md
     }) //7md
 
+client.on('message', msg => {
+  if (msg.content === 'W') {
+    msg.reply('WELCOME TO GIANT SHOP:heart:');
+  }
+});
+
 client.login(process.env.BOT_TOKEN)
