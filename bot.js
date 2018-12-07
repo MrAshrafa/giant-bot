@@ -187,7 +187,7 @@ message.channel.send('WELCOME TO GIANTSHOP:heart:');
 });
 
 client.on("message", message => {
-            if(message.content.startsWith("*تقديم")) {
+            if(message.content.startsWith("=تقديم")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "التقديمات")
