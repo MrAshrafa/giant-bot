@@ -31,6 +31,10 @@ client.user.setGame(`GiantShop4Ever`,"https://www.twitch.tv/dggamingbot")
   console.log('')
 });
  
+client.on('ready',async () => {
+  client.channels.find(ch => ch.id === "520709797637521438" && ch.type === 'voice').join();
+});
+
  client.on('message', message => {
     var args = message.content.split(/[ ]+/)
     if(message.content.includes('discord.gg')){
