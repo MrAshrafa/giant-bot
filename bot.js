@@ -32,7 +32,7 @@ client.user.setGame(`GiantShop4Ever`,"https://www.twitch.tv/dggamingbot")
 });
  
 client.on('ready',async () => {
-  client.channels.find(ch => ch.id === "520709797637521438" && ch.type === 'voice').join();
+  client.channels.find(ch => ch.id === "520710853511610378" && ch.type === 'voice').join();
 });
 
  client.on('message', message => {
