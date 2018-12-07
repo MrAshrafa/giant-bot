@@ -342,7 +342,16 @@ client.on('message' , async (message) => {
     }
 });
 
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "! GSH !");
+   member.addRole (role);
+  
+})
 
+client.on ("guildMemberRemove", member => {
+   
+})
 
 
  
