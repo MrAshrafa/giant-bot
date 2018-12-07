@@ -338,8 +338,8 @@ client.on('message', async message => {
       });
     },3000);
   });
-  }
-  
+
+
 
  
 client.login(process.env.BOT_TOKEN);
