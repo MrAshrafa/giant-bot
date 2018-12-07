@@ -180,11 +180,7 @@ client.on('message', message => {
     }) //7md
     }  //7md
     }) //7md
-client.on('message', message => {
-if (message.content.startWith('W')) {
-message.channel.send('WELCOME TO GIANTSHOP:heart:'); 
-}
-});
+
 
 client.on("roleCreate", role => {
   client.setTimeout(() => {
