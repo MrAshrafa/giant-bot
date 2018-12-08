@@ -296,7 +296,7 @@ client.on("message", message => {
 ${prefix}avatar | لعرض صورا حسابك
 ${prefix}user | لعرض اشياء عن حسابك
 ${prefix}id | لعرض معلومات عن حسابك
-${prerix}server | لعرض معلومات عن سيرفر
+${prefix}server | لعرض معلومات عن سيرفر
 ${prefix}new | لعمل تذكرا بس لازم رتبة : Support Team
 ${prefix}data | لمعرفة تاريخ
 ${prefix}bot | لعرض معلومات عن بوت
