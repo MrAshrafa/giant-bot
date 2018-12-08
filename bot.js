@@ -328,7 +328,7 @@ if (message.content === '=inv') {
       const embed = new Discord.RichEmbed() 
          .setColor("#580e6b")
          .setThumbnail(message.author.avatarURL)
-         .setTexT("GiantBot")
+
       message.author.sendEmbed('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
 
     }
