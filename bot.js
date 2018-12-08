@@ -6,7 +6,7 @@ const prefix = '='
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`=help | =inv ${client.guilds.size}`,"https://www.twitch.tv/dggamingbot")
+client.user.setGame(`=help | =inv `,"https://www.twitch.tv/dggamingbot")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
