@@ -325,14 +325,16 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '=inv') {
-
-      message.author.sendEmbed('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
+ let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+message.author.sendEmbed('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
 
     }
    } 
   });
 client.on('message', message => {
-     if (message.content === (prefix + "=inv")) {
+     if (message.content === (prefix + "inv")) {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
