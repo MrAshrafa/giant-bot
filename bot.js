@@ -305,7 +305,7 @@ ${prefix}ping | لمعرفة سرعة اتصال بوت
 ${prefix}invites | لمعرفة عدد الدعوات
 ${prefix}say | يكرر كلامك لاكن بشكل افضل
 ${prefix}dt | لمعرفة وقت و التاريخ
-=inv | لدعوة بوت
+${prefix}inv | لدعوة بوت
 =-=-=-=-=-=
        **  `)
    message.author.sendEmbed(embed)
@@ -322,17 +322,14 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '=inv') {
- let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#8650a7")
-message.author.sendEmbed('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
-
-    }
-   } 
-  });
+client.on('measage', message => {
+  if (messave.content === (prefix + "inv")) {
+   let embed = new Diacors.RichEmbed()
+    .setColor("Random")
+    .addField("https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot")
+   message.author.sendEmbed(embed);
+     }
+});
 client.on('message', message => {
      if (message.content === (prefix + "inv")) {
      let embed = new Discord.RichEmbed()
