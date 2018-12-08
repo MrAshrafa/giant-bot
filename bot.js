@@ -301,6 +301,10 @@ ${prefix}new | لعمل تذكرا بس لازم رتبة : Support Team
 ${prefix}date | لمعرفة تاريخ
 ${prefix}bot | لعرض معلومات عن بوت
 ${prefix}roles | لعرض رتب سيرفر 
+${prefix}ping | لمعرفة سرعة اتصال بوت
+${prefix}invites | لمعرفة عدد الدعوات
+${prefix}say | يكرر كلامك لاكن بشكل افضل
+${prefix}dt | لمعرفة وقت و التاريخ
 =-=-=-=-=-=
        **  `)
    message.author.sendEmbed(embed)
@@ -320,10 +324,130 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '=inv') {
-      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
+      const embed = new Discord.RichEmbed() 
+         .setColor("#580e6b")
+         .setThumbnail(message.author.avatarURL)
+         .setTexT("GiantBot")
+      message.author.sendEmbed('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
 
     }
    } 
   });
+client.on('message', message => {
+     if (message.content === (prefix + "=inv")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , " تم ارسال رابط الانفايت في خاصك")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+                                if(!message.channel.guild) return;
+                        if (message.content.startsWith(prefix + "ping")) {
+                            if(!message.channel.guild) return;
+                            var msg = `${Date.now() - message.createdTimestamp}`
+                            var api = `${Math.round(client.ping)}`
+                            if (message.author.bot) return;
+                        let embed = new Discord.RichEmbed()
+                        .setAuthor(message.author.username,message.author.avatarURL)
+                        .setColor('RANDOM')
+                        .addField('**Time Taken:**',msg + " ms :signal_strength: ")
+                        .addField('**WebSocket:**',api + " ms :signal_strength: ")
+         message.channel.send({embed:embed});
+                        }
+ });
+
+client.on('message', message => {
+             if (!message.channel.guild) return;
+      if (message.author.bot) return;
+
+  if (!message.content.startsWith(prefix)) return;
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = message.content.split(" ").slice(1);
+  
+  if (command === 'invites') {
+    message.guild.fetchInvites().then(invs => {
+      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
+      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+    return message.reply(`**${inviteCount}: عدد الاشخاص الذي دعوتهم هو**`)
+
+});
+}});
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+
+  if (command === prefix + "say") {
+          message.delete()
+    message.channel.sendMessage(args.join(" ")).catch(console.error);
+  }
+  
+ 
+
+if (command == "embed") {
+    let say = new Discord.RichEmbed()
+  .setThumbnail(message.author.avatarURL)  
+  .setAuthor(message.author.username)
+    .setDescription(args.join("  "))
+    .setColor('Random')
+    message.channel.sendEmbed(say);
+    message.delete();
+  }
+  
+
+
+});
+
+client.on('message', message => {
+        if (message.content === prefix + "dt") {
+            if (!message.channel.guild) return message.reply('** This command only for servers **');  
+var currentTime = new Date(),
+            hours = currentTime.getHours() + 0 ,
+            minutes = currentTime.getMinutes(),
+            seconds = currentTime.getSeconds();
+            Year = currentTime.getFullYear(),
+            Month = currentTime.getMonth() + 1,
+            Day = currentTime.getDate();
+
+            if (minutes < 10) {
+                minutes = '0' + minutes;
+            }
+            var suffix = 'صباحاَ';
+            if (hours >= 12) {
+                suffix = 'مساء';
+                hours = hours - 12;
+            }
+            if (hours == 0) {
+                hours = 12;
+            }
+
+
+                var Date15= new Discord.RichEmbed()
+                .setThumbnail(message.author.avatarURL) 
+                .setTitle("**الوقت وتاريخ**")
+                .setColor('RANDOM')
+                .setTimestamp()
+                .addField('Time',
+                "『"+ hours + ":" + minutes + "』") 
+                .addField('Date',
+                "『"+ Day + "-" + Month + "-" + Year + "』")
+
+                 message.channel.sendEmbed(Date15);
+        }
+    });
+
+//--------------------------------------------------------------------//
+
+
 
 client.login(process.env.BOT_TOKEN);
