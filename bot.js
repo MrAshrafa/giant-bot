@@ -322,20 +322,13 @@ client.on('message', message => {
     }
 });
 
-client.on('measage', message => {
-  if (messave.content === (prefix + "inv")) {
-   let embed = new Diacors.RichEmbed()
-    .setColor("Random")
-    .addField("https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot")
-   message.author.sendEmbed(embed);
-     }
-});
+
 client.on('message', message => {
      if (message.content === (prefix + "inv")) {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
-  .setColor("#8650a7")
-  .addField("Done" , " تم ارسال رابط الانفايت في خاصك")
+  .setColor("Random")
+  .addField("https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot")
   message.channel.sendEmbed(embed);
     }
 });
