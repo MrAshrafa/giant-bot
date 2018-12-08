@@ -305,6 +305,7 @@ ${prefix}ping | لمعرفة سرعة اتصال بوت
 ${prefix}invites | لمعرفة عدد الدعوات
 ${prefix}say | يكرر كلامك لاكن بشكل افضل
 ${prefix}dt | لمعرفة وقت و التاريخ
+=inv | لدعوة بوت
 =-=-=-=-=-=
        **  `)
    message.author.sendEmbed(embed)
