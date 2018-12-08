@@ -325,9 +325,6 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '=inv') {
-      const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
 
       message.author.sendEmbed('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
 
