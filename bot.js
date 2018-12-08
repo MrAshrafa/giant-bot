@@ -646,8 +646,7 @@ client.on("message", message => {
 ${prefix}ban | لتبنيد شخص من سيرفر
 ${prefix}kick | لطرد شخص من سيرفر
 ${prefix}mute | {Muted} لسكات شخص من كتباة فس رومات : لازم رتبة 
-${prefix}unmute | لقك شخص من ميوت
-${prefix}unban-all | لفك باند عن كل الي في سيرفر
+${prefix}umute | لفك ميوت عن شخص
 ${prefix}bc | لرسال رلة لكل الي في سيرفر
 =-=-=-=-=-=
        **  `)
