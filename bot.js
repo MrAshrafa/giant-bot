@@ -327,7 +327,7 @@ client.on('message', message => {
      if (message.content === (prefix + "inv")) {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
-  .setColor("Random")
+  .setColor('Random')
   .addField("https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot")
   message.channel.sendEmbed(embed);
     }
