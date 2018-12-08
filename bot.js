@@ -317,4 +317,13 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+  if (true) {
+if (message.content === '=inv') {
+      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=520267897659195392&permissions=8&scope=bot').catch(e => console.log(e.stack));
+
+    }
+   } 
+  });
+
 client.login(process.env.BOT_TOKEN);
