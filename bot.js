@@ -298,10 +298,10 @@ ${prefix}user | لعرض اشياء عن حسابك
 ${prefix}id | لعرض معلومات عن حسابك
 ${prefix}server | لعرض معلومات عن سيرفر
 ${prefix}new | لعمل تذكرا بس لازم رتبة : Support Team
-${prefix}data | لمعرفة تاريخ
+${prefix}date | لمعرفة تاريخ
 ${prefix}bot | لعرض معلومات عن بوت
-
-
+${prefix}roles | لعرض رتب سيرفر 
+=-=-=-=-=-=
        **  `)
    message.author.sendEmbed(embed)
    
