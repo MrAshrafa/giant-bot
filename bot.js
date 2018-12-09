@@ -321,6 +321,26 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+     if (message.content === ("السلام عليكم")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("GREEN")
+  .addField("وعليكم سلام" , "")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === (prefix + "list")) {
+     let embed = new Discord.RichEmbed()
+     .setColor("RANDOM")
+     .addField("👇" , "👇" , "👉[${client.guilds.size}server]👈  ")
+     message.channel.sendEmbed(embed);
+    }
+});
+
+  
 
 client.on('message', message => {
      if (message.content === (prefix + "inv")) {
@@ -639,11 +659,29 @@ ${prefix}kick | لطرد شخص من سيرفر
 ${prefix}mute | {Muted} لسكات شخص من كتباة فس رومات : لازم رتبة 
 ${prefix}umute | لفك ميوت عن شخص
 ${prefix}bc | لرسال رلة لكل الي في سيرفر
+${prefix}clear | لحذف رسائل شات
 =-=-=-=-=-=
        **  `)
    message.author.sendEmbed(embed)
    
    }
    });  
+
+//-----------------------------------------------------------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 client.login(process.env.BOT_TOKEN);
