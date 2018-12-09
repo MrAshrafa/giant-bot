@@ -335,7 +335,7 @@ client.on('message', message => {
      if (message.content === (prefix + "list")) {
      let embed = new Discord.RichEmbed()
      .setColor("RANDOM")
-     .addField("👇" , "👉[${client.guilds.size}server]👈  ")
+     .addField("👇" , "👉[ ${client.guilds.size} server ]👈  ")
      message.channel.sendEmbed(embed);
     }
 });
